@@ -1,7 +1,8 @@
 {
     "homepage": "https://myrica.estable.jp",
     "description": "Japanese monospace font for programming: Inconsolata + Mgen+",
-    "linence": {
+    "license": {
+        "identifier": "Freeware",
         "url": "https://myrica.estable.jp/page-43/"
     },
     "depends": [
