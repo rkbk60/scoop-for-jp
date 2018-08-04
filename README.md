@@ -14,7 +14,7 @@
 - Myrica: `myrica`
 - MyricaM: `myrica-m`
 
-## 予定
+### 予定
 
 - SKK各種(要管理者権限)
 - SKK辞書
