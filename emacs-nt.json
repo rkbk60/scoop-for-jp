@@ -5,7 +5,9 @@
     "version": "26.1",
     "url": "https://cha.la.coocan.jp/files/emacs-26.1-simple_ime-no_symbol.zip",
     "checkver": "emacs-([\\d.]+)-simple_ime-no_symbol.zip",
-    "autoupdate": "https://cha.la.coocan.jp/files/emacs-$version-simple_ime-no_symbol.zip",
+    "autoupdate": {
+        "url": "https://cha.la.coocan.jp/files/emacs-$version-simple_ime-no_symbol.zip"
+    },
 
     "extract_dir": ".",
     "bin": [
