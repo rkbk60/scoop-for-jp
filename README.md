@@ -48,4 +48,4 @@ explorer /select %JP_FONTS_DIR%
 ## 追加・修正・削除など
 
 すべて当リポジトリのIssuesにて受け付けています。
-[CONTRIBUTING](https:github.com/rkbk60/saji/blob/master/CONTRIBUTING.md)も作りましたので、ぜひご覧ください。
+[CONTRIBUTING](https://github.com/rkbk60/saji/blob/master/CONTRIBUTING.md)も作りましたので、ぜひご覧ください。
