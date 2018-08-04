@@ -1,0 +1,8 @@
+{
+    "description": "Font installer script for rkbk60/scoop-jp manifests.",
+
+    "version": "0.1.0",
+    "url": "https://raw.githubusercontent.com/rkbk60/scoop-jp/blob/master/psutil/font.ps1",
+
+    "bin": [ ["font.ps1", "jp-font-util", ""] ]
+}

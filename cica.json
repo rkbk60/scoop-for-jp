@@ -1,0 +1,27 @@
+{
+    "homepage": "https://miiton.github.io/Cica/",
+    "description": "Japanese monospace font for programming: UbuntuMono + RoundMgen+ + devicons",
+    "license": {
+        "url": "https://github.com/miiton/Cica/LICENSE.txt"
+    },
+    "depends": [
+        "jp-util-font"
+    ],
+
+    "version": "3.0.0",
+    "url": "https://github.com/miiton/Cica/releases/download/v3.0.0/Cica_v3.0.0.zip",
+    "hash": "5f094d9229eef345c19a853c91ba0b2c3734b7a619d7542f3e03a7999f2eb9db",
+    "checkver": {
+        "github": "https://github.com/miiton/Cica"
+    },
+    "autoupdate": {
+        "url": "https://github.com/miiton/Cica/releases/download/v$version/Cica_v$version.zip"
+    },
+
+    "installer": {
+        "script": "jp-util-font $true $dir 'Cica-*.ttf'"
+    },
+    "uninstaller": {
+        "script": "jp-util-font $false $dir 'Cica-*.ttf'"
+    }
+}

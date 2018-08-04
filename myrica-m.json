@@ -1,0 +1,27 @@
+{
+    "homepage": "https://myrica.estable.jp",
+    "description": "Japanese monospace font for programming: Inconsolata + Mgen+",
+    "linence": {
+        "url": [
+            "https://github.com/tomokuni/Myrica/tree/master/product/LICENSE_OFT.txt",
+            "https://github.com/tomokuni/Myrica/tree/master/product/LICENSE_M+.txt"
+        ]
+    },
+    "depends": [
+        "jp-util-font"
+    ],
+
+    "version": "3.0.0",
+    "url": "https://github.com/tomokuni/Myrica/raw/master/product/MyricaM.7z",
+    "hash": "7b309919d0f5e51cb2d96dc13b94794efe39f2b2f4eae7a43d9404088ad2ddda",
+    "checkver": {
+        "github": "https://github.com/tomokuni/Myrica"
+    },
+
+    "installer": {
+        "script": "jp-util-font $true $dir '*.TTC'"
+    },
+    "uninstaller": {
+        "script": "jp-util-font $false $dir '*.TTC'"
+    }
+}
