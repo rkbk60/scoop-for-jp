@@ -64,6 +64,9 @@ function uninstall_local {
 }
 
 # main
+if ($env:JP_FONT_DIR == "") {
+    [environment]::SetEnvironmentVariable('JP_FONT_DIR', "$HOME\JpFonts", 'User')
+}
 if (is_admin) {
     if ($is_install) {
         install_global   $dir $wildcard
@@ -71,9 +74,6 @@ if (is_admin) {
         uninstall_global $dir $wildcard
     }
 } else {
-    if ($env:JP_FONT_DIR == "") {
-        [environment]::SetEnvironmentVariable('JP_FONT_DIR', "$HOME\JpFonts", 'User')
-    }
     if ($is_install) {
         install_local    $dir $wildcard
     } else {
