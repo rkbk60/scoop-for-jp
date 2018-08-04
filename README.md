@@ -13,6 +13,7 @@
 - Cica: `cica`
 - Myrica: `myrica`
 - MyricaM: `myrica-m`
+- Ricty Diminished: `ricty-diminished`
 
 ### 予定
 
