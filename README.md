@@ -1,4 +1,4 @@
-# 匙(さじ)
+# 匙(さじ) [![Build status](https://ci.appveyor.com/api/projects/status/882wdtcnlpedaq3l?svg=true)](https://ci.appveyor.com/project/rkbk60/saji)
 
 日本語環境で使用するアプリやフォントを寄せ集めた[Scoop](https://github.com/lukesampson/scoop)の非公式Bucketになります。
 
