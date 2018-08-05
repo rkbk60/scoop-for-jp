@@ -19,16 +19,24 @@ function is_admin {
     $id = [security.principal.windowsidentity]::getcurrent()
     ([security.principal.windowsprincipal]($id)).isinrole($admin)
 }
+function warn {
+    Write-Error "jp-util-font: $Argv"
+}
 function notice {
     Write-Host $Argv[1] -Foreground Magenta
+}
+function log {
+    Write-Host $Argv[1] -Foreground White
 }
 
 function install_global {
     Param($dir, $wildcard)
     $regist = 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts'
+    $postfix = ' (TrueType)'
     Get-ChildItem $dir -Filter $wildcard | ForEach-Object {
+        log "registering $_ ..."
         New-ItemProperty -Path $regist `
-                         -Name $_.Name.Replace($_.Extension, ' (TrueType)')`
+                         -Name $_.Name.Replace($_.Extension, $postfix)`
                          -Value $_.Name -Force `
             | Out-Null
         Copy-Item "$dir\$_" -Destination "$env:windir\Fonts"
@@ -37,9 +45,11 @@ function install_global {
 function uninstall_global {
     Param($dir, $wildcard)
     $regist = 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts'
+    $postfix = ' (TrueType)'
     Get-ChildItem $dir -Filter $wildcard | ForEach-Object {
+        log "unregistering $_ ..."
         Remove-ItemProperty -Path $regist `
-                            -Name $_.Name.Replace($_.Extension, ' (TrueType)') `
+                            -Name $_.Name.Replace($_.Extension, $postfix) `
                             -ErrorAction SilentlyContinue
                             -Force
         Remove-Item "$env:windir\Fonts\$($_.Name)" -ErrorAction SilentlyContinue -Force
@@ -48,25 +58,42 @@ function uninstall_global {
 
 function install_local {
     Param($dir, $wildcard)
-    if (!(Test-Path $env:JP_FONT_DIR -ItemType Directory)) {
-        New-Item -Path $env:JP_FONT_DIR -ItemType Directory -Force
+    $pool = [environment]::GetEnvironmentVariable('JP_FONT_DIR', 'User')
+    if ($pool -eq $null -or $pool -eq "") {
+        $pool = "$HOME\JpFonts"
+        [environment]::SetEnvironmentVariable('JP_FONT_DIR', "$HOME\JpFonts", 'User')
+    }
+    if (!(Test-Path $pool -ItemType Directory)) {
+        notice "Make new directory '$pool' to access font files easily."
+        New-Item -Path $pool -ItemType Directory -Force
     }
     Get-ChildItem $from -Filter $wildcard | ForEach-Object {
-        Copy-Item "$dir\$_" -Destination $env:JP_FONT_DIR
+        log "making copy of $_ ..."
+        Copy-Item "$dir\$_" -Destination $pool
     }
-    notice "Font files are copied to '$env:JP_FONT_DIR'."
+    notice "Font files are copied to '$pool'."
+    notice "You can access this directory with these commands:"
+    notice '- cmd.exe     explorer %JP_FONT_DIR%'
+    notice '- PowerShell  explorer $env:JP_FONT_DIR'
 }
 function uninstall_local {
     Param($dir, $wildcard)
+    $pool = [environment]::GetEnvironmentVariable('JP_FONT_DIR', 'User')
+    if ($pool -eq $null) {
+        warn "%JP_FONT_DIR% is not defined. End uninstallation."
+        return 1
+    }
+    if (!(Test-Path $pool -ItemType Directory)) {
+        warn "%JP_FONT_DIR% is not existing directory. End uninstallation."
+        return 2
+    }
     Get-ChildItem $dir -Filter $wildcard | ForEach-Object {
-        Remove-Item "$env:JP_FONT_DIR\$($_.Name)" -ErrorAction SilentlyContinue -Force
+        log "deleting copy of $_ ..."
+        Remove-Item "$pool\$($_.Name)" -ErrorAction SilentlyContinue -Force
     }
 }
 
 # main
-if ($env:JP_FONT_DIR -eq "") {
-    [environment]::SetEnvironmentVariable('JP_FONT_DIR', "$HOME\JpFonts", 'User')
-}
 if (is_admin) {
     if ($is_install) {
         install_global   $dir $wildcard

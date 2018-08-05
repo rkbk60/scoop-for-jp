@@ -1,8 +1,9 @@
 {
     "description": "Font installer/uninstaller script for saji.",
+    "license": "MIT",
 
-    "version": "0.1.1",
+    "version": "0.1.2",
     "url": "https://raw.githubusercontent.com/rkbk60/saji/master/psutil/font.ps1",
 
-    "bin": [ ["font.ps1", "jp-util-font", ""] ]
+    "bin": [ ["font.ps1", "jp-util-font"] ]
 }
