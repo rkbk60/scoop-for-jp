@@ -4,5 +4,5 @@
     "version": "0.1.1",
     "url": "https://raw.githubusercontent.com/rkbk60/saji/master/psutil/font.ps1",
 
-    "bin": [ ["font.ps1", "jp-font-util", ""] ]
+    "bin": [ ["font.ps1", "jp-util-font", ""] ]
 }
