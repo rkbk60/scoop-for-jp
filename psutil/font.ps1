@@ -20,13 +20,14 @@ function is_admin {
     ([security.principal.windowsprincipal]($id)).isinrole($admin)
 }
 function warn {
-    Write-Error "jp-util-font: $Argv"
+    Param($msg)
+    Write-Error "jp-util-font: $msg"
 }
 function notice {
-    Write-Host $Argv[1] -Foreground Magenta
+    Write-Host $Args[1] -ForegroundColor Magenta
 }
 function log {
-    Write-Host $Argv[1] -Foreground White
+    Write-Host $Args[1] -ForegroundColor White
 }
 
 function install_global {
@@ -63,7 +64,7 @@ function install_local {
         $pool = "$HOME\JpFonts"
         [environment]::SetEnvironmentVariable('JP_FONT_DIR', "$HOME\JpFonts", 'User')
     }
-    if (!(Test-Path $pool -ItemType Directory)) {
+    if (!(Test-Path $pool)) {
         notice "Make new directory '$pool' to access font files easily."
         New-Item -Path $pool -ItemType Directory -Force
     }
@@ -83,7 +84,7 @@ function uninstall_local {
         warn "%JP_FONT_DIR% is not defined. End uninstallation."
         return 1
     }
-    if (!(Test-Path $pool -ItemType Directory)) {
+    if (!(Test-Path $pool)) {
         warn "%JP_FONT_DIR% is not existing directory. End uninstallation."
         return 2
     }
