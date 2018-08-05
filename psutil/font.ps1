@@ -68,9 +68,9 @@ function install_local {
     }
     if (!(Test-Path $pool)) {
         notice "Make new directory '$pool' to access font files easily."
-        New-Item -Path $pool -ItemType Directory -Force
+        New-Item -Path $pool -ItemType Directory -Force | Out-Null
     }
-    Get-ChildItem $from -Filter $wildcard | ForEach-Object {
+    Get-ChildItem $dir -Filter $wildcard | ForEach-Object {
         log "making copy of $_ ..."
         Copy-Item "$dir\$_" -Destination $pool
     }
