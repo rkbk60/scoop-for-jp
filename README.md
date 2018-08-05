@@ -40,10 +40,10 @@ scoop install main/sudo
 sudo scoop install cica -g
 ```
 
-フォントの追加(半自動)
+フォントの追加(半自動、展開先は環境変数`JP_FONT_DIR`で指定可能)
 ```
 scoop install cica
-explorer /select %JP_FONTS_DIR%
+explorer %USERPROFILE%\JpFonts
 ```
 
 ## 追加・修正・削除など

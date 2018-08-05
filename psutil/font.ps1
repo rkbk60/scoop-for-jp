@@ -21,13 +21,15 @@ function is_admin {
 }
 function warn {
     Param($msg)
-    Write-Error "jp-util-font: $msg"
+    Write-Host "Warning: $msg" -ForegroundColor Red
 }
 function notice {
-    Write-Host $Args[1] -ForegroundColor Magenta
+    Param($msg)
+    Write-Host $msg -ForegroundColor Magenta
 }
 function log {
-    Write-Host $Args[1] -ForegroundColor White
+    Param($msg)
+    Write-Host $msg -ForegroundColor White
 }
 
 function install_global {
@@ -73,7 +75,7 @@ function install_local {
         Copy-Item "$dir\$_" -Destination $pool
     }
     notice "Font files are copied to '$pool'."
-    notice "You can access this directory with these commands:"
+    notice "You can access this directory from THE NEXT SESSION with these commands:"
     notice '- cmd.exe     explorer %JP_FONT_DIR%'
     notice '- PowerShell  explorer $env:JP_FONT_DIR'
 }
