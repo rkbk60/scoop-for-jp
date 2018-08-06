@@ -40,7 +40,8 @@ function install_global {
         log "registering $_ ..."
         New-ItemProperty -Path $regist `
                          -Name $_.Name.Replace($_.Extension, $postfix)`
-                         -Value $_.Name -Force `
+                         -Value $_.Name `
+                         -Force `
             | Out-Null
         Copy-Item "$dir\$_" -Destination "$env:windir\Fonts"
     }
@@ -53,7 +54,7 @@ function uninstall_global {
         log "unregistering $_ ..."
         Remove-ItemProperty -Path $regist `
                             -Name $_.Name.Replace($_.Extension, $postfix) `
-                            -ErrorAction SilentlyContinue
+                            -ErrorAction SilentlyContinue `
                             -Force
         Remove-Item "$env:windir\Fonts\$($_.Name)" -ErrorAction SilentlyContinue -Force
     }
