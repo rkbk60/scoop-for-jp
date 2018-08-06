@@ -28,7 +28,7 @@
             },
             "64bit": {
                 "url": "https://github.com/koron/vim-kaoriya/releases/download/v$matchV-$matchD/vim$matchS-kaoriya-win64-$matchV-$matchD.zip",
-                "extract_dir": "vim$matchS-kaoriya-win32"
+                "extract_dir": "vim$matchS-kaoriya-win64"
             }
         }
     },
