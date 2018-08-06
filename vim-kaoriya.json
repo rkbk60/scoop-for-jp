@@ -18,7 +18,7 @@
     "checkver": {
         "url": "https://github.com/koron/vim-kaoriya/releases/latest",
         "re": "vim(?<s>[\\d]+)-win64-(?<v>[\\d]+.[\\d]+.[\\d]+)-(?<d>[\\d]{8}).zip",
-        "replace": "${matchV}.${matchD}"
+        "replace": "${v}.${d}"
     },
     "autoupdate": {
         "architecture": {
