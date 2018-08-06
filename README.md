@@ -1,6 +1,7 @@
-# 匙(さじ) [![Build status](https://ci.appveyor.com/api/projects/status/882wdtcnlpedaq3l?svg=true)](https://ci.appveyor.com/project/rkbk60/saji)
+# 匙(さじ) [![test on appveyor](https://ci.appveyor.com/api/projects/status/882wdtcnlpedaq3l?svg=true&failingText=Test%20-%20failing&passingText=Test%20-%20passing)](https://ci.appveyor.com/project/rkbk60/saji)
 
-日本語環境で使用するアプリやフォントを寄せ集めた[Scoop](https://github.com/lukesampson/scoop)の非公式Bucketになります。
+日本語環境で使用するポータブルアプリやフォントなどを寄せ集めた[Scoop](https://github.com/lukesampson/scoop)の非公式Bucketです。
+非技術者含む幅広い日本人を対象した、`main`や`extras`など基本的なBucketの拡張にすることを目的としています。
 
 ## 収録Manifest
 
@@ -17,10 +18,12 @@
 
 ### 予定
 
-- SKK各種(要管理者権限)
+- 秀丸エディタ
+- TeraX(TeraTerm, TeraPad...)
+- SKKツール各種
 - SKK辞書
 - WinMerge日本語版
-- フォント各種
+- フォント各種(OpenTypeやプロポーショナル版含む)
 
 ## 使い方
 
