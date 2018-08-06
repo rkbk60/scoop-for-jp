@@ -1,4 +1,4 @@
-# Scoop for jp
+# Scoop for jp [![test on AppVeyor](https://ci.appveyor.com/api/projects/status/d8wbibud44gg8toi?svg=true&failingText=Test%3Afailing&passingText=Test%3Apassing)](https://ci.appveyor.com/project/rkbk60/scoop-for-jp)
 
 日本語環境で使用するポータブルアプリやフォントなどを寄せ集めた[Scoop](https://github.com/lukesampson/scoop)の非公式Bucketです。
 非技術者含む幅広い日本人を対象した、`main`や`extras`など基本的なBucketの拡張にすることを目的としています。
