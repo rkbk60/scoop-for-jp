@@ -34,14 +34,14 @@
     },
 
     "bin": [
-        ["vim\\vim.exe", "vim",  ""],
-        ["vim\\vim.exe", "vimk", ""],
-        ["vim\\gvim.exe", "gvim",  ""],
-        ["vim\\gvim.exe", "gvimk", ""]
+        ["vim.exe", "vim", ""],
+        ["vim.exe", "vimk", ""],
+        ["gvim.exe", "gvim", ""],
+        ["gvim.exe", "gvimk", ""]
     ],
     "shortcuts": [
         [
-            "vim\\gvim.exe",
+            "gvim.exe",
             "Gvim"
         ]
     ]
