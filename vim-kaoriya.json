@@ -6,11 +6,13 @@
     "architecture": {
         "32bit": {
             "url": "https://github.com/koron/vim-kaoriya/releases/download/v8.1.0005-20180520/vim81-kaoriya-win32-8.1.0005-20180520.zip",
-            "hash": "afacd6e27304136f5ebae3edddf6e747f410880fa6a986d80be772e03ef56d36"
+            "hash": "afacd6e27304136f5ebae3edddf6e747f410880fa6a986d80be772e03ef56d36",
+            "extract_dir": "vim81-kaoriya-win32"
         },
         "64bit": {
             "url": "https://github.com/koron/vim-kaoriya/releases/download/v8.1.0005-20180520/vim81-kaoriya-win64-8.1.0005-20180520.zip",
-            "hash": "53e8dd08e2249ce8a54784e16469151a7bf9857ac9acf3a1b341ac4e7da26fb2"
+            "hash": "53e8dd08e2249ce8a54784e16469151a7bf9857ac9acf3a1b341ac4e7da26fb2",
+            "extract_dir": "vim81-kaoriya-win64"
         }
     },
     "checkver": {
@@ -21,19 +23,16 @@
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://github.com/koron/vim-kaoriya/releases/download/v$matchV-$matchD/vim$matchS-kaoriya-win32-$matchV-$matchD.zip"
+                "url": "https://github.com/koron/vim-kaoriya/releases/download/v$matchV-$matchD/vim$matchS-kaoriya-win32-$matchV-$matchD.zip",
+                "extract_dir": "vim$matchS-kaoriya-win32"
             },
             "64bit": {
-                "url": "https://github.com/koron/vim-kaoriya/releases/download/v$matchV-$matchD/vim$matchS-kaoriya-win64-$matchV-$matchD.zip"
+                "url": "https://github.com/koron/vim-kaoriya/releases/download/v$matchV-$matchD/vim$matchS-kaoriya-win64-$matchV-$matchD.zip",
+                "extract_dir": "vim$matchS-kaoriya-win32"
             }
         }
     },
 
-    "installer": {
-        "script": [
-            "Get-ChildItem $dir | Rename-Item -NewName vim"
-        ]
-    },
     "bin": [
         ["vim\\vim.exe", "vim",  ""],
         ["vim\\vim.exe", "vimk", ""],
