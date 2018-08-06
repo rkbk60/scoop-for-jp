@@ -24,8 +24,14 @@ describe 'Style constraints for non-binary project files' {
             where-object { $_.fullname -inotmatch $($project_file_exclusions -join '|') } |
             where-object { $_.fullname -inotmatch '(.exe|.zip|.dll)$' }
     )
+    $scoopfiles = @(
+        # gather script or manifest
+        $files |
+            where-object { $_.fullname -inotmatch '.md$' }
+    )
 
     $files_exist = ($files.Count -gt 0)
+    $sfiles_exist = ($scoopfiles.Count -gt 0)
 
     it $('non-binary project files exist ({0} found)' -f $files.Count) -skip:$(-not $files_exist) {
         if (-not ($files.Count -gt 0))
@@ -101,9 +107,9 @@ describe 'Style constraints for non-binary project files' {
         }
     }
 
-    it 'files have no lines containing trailing whitespace' -skip:$(-not $files_exist) {
+    it 'files have no lines containing trailing whitespace (excepting documents)' -skip:$(-not $sfiles_exist) {
         $badLines = @(
-            foreach ($file in $files)
+            foreach ($file in $scoopfiles)
             {
                 $lines = [System.IO.File]::ReadAllLines($file.FullName)
                 $lineCount = $lines.Count
@@ -124,9 +130,9 @@ describe 'Style constraints for non-binary project files' {
         }
     }
 
-    it 'any leading whitespace consists only of spaces (excepting makefiles)' -skip:$(-not $files_exist) {
+    it 'any leading whitespace consists only of spaces (excepting makefiles/documents)' -skip:$(-not $sfiles_exist) {
         $badLines = @(
-            foreach ($file in $files)
+            foreach ($file in $scoopfiles)
             {
                 if ($file.fullname -inotmatch '(^|.)makefile$')
                 {
