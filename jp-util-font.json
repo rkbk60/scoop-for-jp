@@ -1,9 +1,9 @@
 {
-    "description": "Font installer/uninstaller script for saji.",
+    "description": "Font installer/uninstaller script for scoop-for-jp bucket.",
     "license": "MIT",
 
     "version": "0.1.5",
-    "url": "https://raw.githubusercontent.com/rkbk60/saji/master/psutil/font.ps1",
+    "url": "https://raw.githubusercontent.com/rkbk60/scoop-for-jp/master/psutil/font.ps1",
 
     "bin": [ ["font.ps1", "jp-util-font"] ]
 }

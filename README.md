@@ -1,4 +1,4 @@
-# 匙(さじ) [![test on appveyor](https://ci.appveyor.com/api/projects/status/882wdtcnlpedaq3l?svg=true&failingText=Test%20-%20failing&passingText=Test%20-%20passing)](https://ci.appveyor.com/project/rkbk60/saji)
+# Scoop for jp
 
 日本語環境で使用するポータブルアプリやフォントなどを寄せ集めた[Scoop](https://github.com/lukesampson/scoop)の非公式Bucketです。
 非技術者含む幅広い日本人を対象した、`main`や`extras`など基本的なBucketの拡張にすることを目的としています。
@@ -29,7 +29,7 @@
 
 Bucket有効化
 ```
-scoop bucket add jp https://github.com/rkbk60/saji
+scoop bucket add jp https://github.com/rkbk60/scoop-for-jp
 ```
 
 アプリの追加
@@ -52,4 +52,4 @@ explorer %USERPROFILE%\JpFonts
 ## 追加・修正・削除など
 
 すべて当リポジトリのIssuesにて受け付けています。
-[CONTRIBUTING](https://github.com/rkbk60/saji/blob/master/CONTRIBUTING.md)も作りましたので、ぜひご覧ください。
+[CONTRIBUTING](https://github.com/rkbk60/scoop-for-jp/blob/master/CONTRIBUTING.md)も作りましたので、ぜひご覧ください。

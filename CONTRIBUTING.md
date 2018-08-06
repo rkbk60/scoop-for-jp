@@ -1,4 +1,4 @@
-# CONTRIBUTING for saji
+# CONTRIBUTING for jp
 
 以下に挙げることさえ認知していただければ、基本なんでもOKです。
 
