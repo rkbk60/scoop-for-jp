@@ -16,7 +16,7 @@
         }
     },
     "checkver": {
-        "url": "https://github.com/zetamatta/nyagos/latest",
+        "url": "https://github.com/zetamatta/nyagos/releases/latest",
         "re": "nyagos-([\\d._]+)-386.zip"
     },
     "autoupdate": {
