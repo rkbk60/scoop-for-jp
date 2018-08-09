@@ -4,6 +4,7 @@
 
     "version": "0.1.5",
     "url": "https://raw.githubusercontent.com/rkbk60/scoop-for-jp/master/psutil/font.ps1",
+    "hash": "32e5d53572efb3aa7669cd36aefe7681fd5cba159df19e7725e11e5f54dc03d0",
 
     "bin": [ ["font.ps1", "jp-util-font"] ]
 }
